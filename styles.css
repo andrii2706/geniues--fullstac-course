@@ -1,0 +1,129 @@
+html > body {
+  font-family: Roboto;
+  font-style: Bold;
+  line-height: 100%;
+  letter-spacing: 0%;
+  margin: 0;
+}
+
+.header {
+  padding: 1rem 3rem;
+  background: transparent;
+  backdrop-filter: blur(10px);
+}
+.flex-box-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flex-box-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.flex-box-start {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-direction: column;
+}
+.link {
+  text-decoration: none;
+  color: black;
+  margin-left: 2rem;
+  &:hover {
+    font-weight: 500;
+    transition: ease-in-out 300ms;
+    color: #2b7fff;
+  }
+}
+.social-media {
+  :nth-child(2) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+.phone-call-btn {
+  margin-top: 3rem;
+  background: #2b7fff;
+  color: white;
+  border-radius: 25px;
+  padding: 1rem 2rem;
+  border: none;
+  font-weight: 700;
+  opacity: 75;
+  &:hover {
+    opacity: 100;
+  }
+}
+
+.btn-subtitle {
+  margin-top: 2rem;
+  color: #4a4a4a;
+  font-size: 12px;
+  font-weight: 400;
+  width: 238px;
+  text-align: center;
+}
+
+.subheader-title {
+  font-size: 18px;
+  font-weight: 400;
+}
+.background-image {
+  background-image: url('/image-1.jpg');
+  background-position: top;
+  background-size: cover;
+  clip-path: polygon(0 0, 100% 0, 100% 83%, 70% 82%, 61% 80%, 0 72%);
+}
+.subheader-block-container {
+  height: 687px;
+  padding: 3rem 7rem;
+}
+
+.circle-image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: block;
+  margin-bottom: 20px;
+}
+
+.text-content {
+  padding: 20px;
+  border-radius: 15px;
+  max-width: 60%;
+}
+
+.beauty-block-container {
+  display: flex;
+  gap: 50px;
+  padding: 3rem 7rem;
+  background-color: white;
+}
+
+.image-area {
+  position: relative;
+  padding-top: 50px;
+}
+
+.image-area .circle-image.bottom {
+  position: absolute;
+  top: 260px;
+  left: 166px;
+  z-index: 10;
+}
+
+.company-name {
+  font-family: Play;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 64px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-transform: capitalize;
+
+  color: #2b7fff;
+}
