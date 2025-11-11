@@ -1,0 +1,14 @@
+{
+  "name": "lesson-1",
+  "version": "1.0.0",
+  "description": "Studing project for node-js",
+  "main": "node.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "andriipas2706",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
