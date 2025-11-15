@@ -1,0 +1,17 @@
+{
+  "name": "lesson-2-express",
+  "version": "1.0.0",
+  "description": "Lesson 2 with using express js on it",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "andriipas2706",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "express": "^5.1.0",
+    "sqlite3": "^5.1.7"
+  }
+}
