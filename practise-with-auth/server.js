@@ -21,8 +21,6 @@ connectDB();
 
 app.use(bodyParser.json());
 
-let userInfo;
-
 app.post("/register", async (req, res) => {
   try {
     const { firstName, lastName, email, password: pass, role } = req.body;
