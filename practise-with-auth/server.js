@@ -11,11 +11,11 @@ const Posts = require("./models/postModel");
 const errorHandler = require("./error/error-handler");
 
 //middleware
-
 const checkAuth = require("./middleware/checkAuth");
 const checkRole = require("./middleware/checkRole");
 
 const app = express();
+
 //Db connect
 connectDB();
 
