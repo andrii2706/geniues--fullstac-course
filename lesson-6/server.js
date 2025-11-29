@@ -111,6 +111,7 @@ const storage = multer.diskStorage({
     cb(null, file.originalname);
   },
 });
+
 // add single file into server
 // const upload = multer({ storage, limits: { fileSize: 1000000 } }).single(
 //   "demo_image"
