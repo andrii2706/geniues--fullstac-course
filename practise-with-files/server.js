@@ -8,6 +8,10 @@ const app = express();
 connectDb();
 app.use(bodyParser.json());
 
+//create a folder for uploads
+
+// const upload = multer({ dest: 'uploads/' }).single('demo_image');
+
 app.use("./uploads", express.static("uploads"));
 
 const storage = multer.diskStorage({
