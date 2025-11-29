@@ -1,6 +1,15 @@
 const mongoose = require("mongoose");
 
-const userSchema = mongoose.Schema({});
+const userSchema = new mongoose.Schema({
+  fullName: {
+    type: String,
+    require: [true, "Fullname is required"],
+  },
+  photo: {
+    type: String,
+    default: null,
+  },
+});
 
 const ImageSchema = mongoose.model("ImageSchema", userSchema);
 module.exports = ImageSchema;
