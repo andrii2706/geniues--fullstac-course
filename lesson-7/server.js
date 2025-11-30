@@ -1,17 +1,17 @@
 // const objectLiteral = {};
 // const objectConstractor = new Object();
 
-// const legolas = {
-//   name: "Legolas",
-//   race: "Elf",
-//   weapon: "bow and arrows",
-//   greet: function () {
-//     return `Greeting I'm ${this.name}`;
-//   },
-//   fight: function () {
-//     return `${this.name} gracefully attacks with ${this.weapon}`;
-//   },
-// };
+const legolas = {
+  name: "Legolas",
+  race: "Elf",
+  weapon: "bow and arrows",
+  greet: function () {
+    return `Greeting I'm ${this.name}`;
+  },
+  fight: function () {
+    return `${this.name} gracefully attacks with ${this.weapon}`;
+  },
+};
 
 // const entries = Object.entries(legolas).forEach((value) => {
 //   let key = value[0];
@@ -24,6 +24,28 @@
 //   age: 100,
 //   homeland: "Woodland Realm",
 // };
+
+// const newObject = Object.assign({
+//   name: "John",
+//   race: "human",
+//   weapon: "sword",
+//   greet: function () {
+//     return ` Greeting I'm ${this.name}`;
+//   },
+//   fight: function () {
+//     return `${this.name} gracefully attacks with ${this.weapon}`;
+//   },
+//   testObj: {
+//     name: "text",
+//   },
+// });
+
+// const newObject1 = Object.assign({}, legolas);
+
+// console.log(newObject.testObj.name);
+// console.log(newObject1);
+
+// console.log(newObject1.greet());
 
 // concat two objects
 // const merged = Object.assign(legolas, additionaInfo);
