@@ -1,17 +1,17 @@
 // const objectLiteral = {};
 // const objectConstractor = new Object();
 
-const legolas = {
-  name: "Legolas",
-  race: "Elf",
-  weapon: "bow and arrows",
-  greet: function () {
-    return `Greeting I'm ${this.name}`;
-  },
-  fight: function () {
-    return `${this.name} gracefully attacks with ${this.weapon}`;
-  },
-};
+// const legolas = {
+//   name: "Legolas",
+//   race: "Elf",
+//   weapon: "bow and arrows",
+//   greet: function () {
+//     return `Greeting I'm ${this.name}`;
+//   },
+//   fight: function () {
+//     return `${this.name} gracefully attacks with ${this.weapon}`;
+//   },
+// };
 
 // const entries = Object.entries(legolas).forEach((value) => {
 //   let key = value[0];
