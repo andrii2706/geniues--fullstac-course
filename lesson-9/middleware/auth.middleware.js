@@ -2,16 +2,18 @@ import User from '../models/userModel.js';
 import bcrypt from 'bcrypt';
 
 export default async (req, res, next) => {
+    //check auth header
+
     if (
-        res.headers?.authorization &&
-        res.headers.authorization.indexOf('Basic') === -1
+        !req.headers.authorization ||
+        !req.headers.authorization.startsWith('Basic ')
     ) {
         return res.status(401).json({ message: 'User is not auth' });
     }
+    //verify basic auth
+    const base64Credentials = req.headers.authorization.split(' ')[1];
 
-    const base64Creadentials = req.headers.authorization.split(' ')[1];
-
-    const credentials = Buffer.from(base64Creadentials, 'base64').toString(
+    const credentials = Buffer.from(base64Credentials, 'base64').toString(
         'ascii'
     );
 
@@ -30,6 +32,7 @@ export default async (req, res, next) => {
             message: 'Invalid password or email',
         });
     }
+    // attach user to request object
 
     req.user = user._doc;
 
