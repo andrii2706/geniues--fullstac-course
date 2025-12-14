@@ -16,7 +16,7 @@ export const register = async (req, res) => {
         });
 
         const { password, ...userData } = user._doc;
-        return res.status(200).json(userData);
+        return res.json({ userData });
     } catch (error) {
         console.error(error);
         res.status(500).json({ message: error.message });

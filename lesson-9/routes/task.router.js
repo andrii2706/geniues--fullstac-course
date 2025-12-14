@@ -6,6 +6,7 @@ import roleMiddleware from '../middleware/role.middleware.js';
 const router = express.Router();
 
 router.use(authMiddleware);
+
 /**
  * @openapi
  * /api/task:
@@ -14,7 +15,7 @@ router.use(authMiddleware);
  *       - Task
  *     summary: Create a task
  *     security:
- *      - basicAuth: []
+ *       - basicAuth: []
  *     requestBody:
  *       required: true
  *       content:
@@ -32,18 +33,19 @@ router.use(authMiddleware);
  *         description: Bad Request
  */
 router.post('/task', taskController.createTask);
+
 /**
  * @openapi
  * /api/task/all:
  *   get:
  *     tags:
  *       - Tasks
- *     summary: get a tasks
+ *     summary: Get all tasks
  *     security:
  *       - basicAuth: []
  *     responses:
  *       200:
- *         description: Task getted
+ *         description: All tasks fetched
  *         content:
  *           application/json:
  *             schema:
@@ -62,20 +64,20 @@ router.post('/task', taskController.createTask);
  *       400:
  *         description: Bad Request
  */
-
 router.get('/task/all', roleMiddleware, taskController.getAllTasks);
+
 /**
  * @openapi
  * /api/tasks:
  *   get:
  *     tags:
  *       - Tasks
- *     summary: get a tasks
+ *     summary: Get tasks by userId
  *     security:
  *       - basicAuth: []
  *     responses:
  *       200:
- *         description: Task getted by userId
+ *         description: Tasks fetched by userId
  *         content:
  *           application/json:
  *             schema:
@@ -95,33 +97,38 @@ router.get('/task/all', roleMiddleware, taskController.getAllTasks);
  *         description: Bad Request
  */
 router.get('/tasks', taskController.getTaskByUserId);
+
 /**
  * @openapi
- * /api/task/:id:
+ * /api/task/{id}:
  *   get:
  *     tags:
  *       - Task
- *     summary: get a tasks
+ *     summary: Get a task by id
  *     security:
  *       - basicAuth: []
+ *     parameters:
+ *       - name: id
+ *         in: path
+ *         required: true
+ *         schema:
+ *           type: string
  *     responses:
  *       200:
- *         description: Task getted by userId
+ *         description: Task fetched by id
  *         content:
  *           application/json:
  *             schema:
  *               type: object
- *               items:
- *                 type: array
- *                 properties:
- *                   id:
- *                     type: string
- *                   description:
- *                     type: string
- *                   completed:
- *                     type: boolean
- *                   createdBy:
- *                     type: string
+ *               properties:
+ *                 id:
+ *                   type: string
+ *                 description:
+ *                   type: string
+ *                 completed:
+ *                   type: boolean
+ *                 createdBy:
+ *                   type: string
  *       400:
  *         description: Bad Request
  */
@@ -129,14 +136,20 @@ router.get('/task/:id', taskController.getTask);
 
 /**
  * @openapi
- * /api/task/:id:
+ * /api/task/{id}:
  *   put:
  *     tags:
  *       - Task
- *     summary: update a task
+ *     summary: Update a task
  *     security:
  *       - basicAuth: []
- *     *     requestBody:
+ *     parameters:
+ *       - name: id
+ *         in: path
+ *         required: true
+ *         schema:
+ *           type: string
+ *     requestBody:
  *       required: true
  *       content:
  *         application/json:
@@ -147,21 +160,28 @@ router.get('/task/:id', taskController.getTask);
  *                 type: string
  *                 example: Buy a book
  *     responses:
- *       201:
- *         description: Task created
+ *       200:
+ *         description: Task updated
  *       400:
  *         description: Bad Request
  */
 router.put('/task/:id', taskController.updateTask);
+
 /**
  * @openapi
- * /api/task/:id:
+ * /api/task/{id}:
  *   delete:
  *     tags:
  *       - Task
- *     summary: delete task
+ *     summary: Delete a task
  *     security:
  *       - basicAuth: []
+ *     parameters:
+ *       - name: id
+ *         in: path
+ *         required: true
+ *         schema:
+ *           type: string
  *     responses:
  *       200:
  *         description: Task deleted by id
